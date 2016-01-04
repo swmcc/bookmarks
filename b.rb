@@ -11,6 +11,7 @@ class Options
     options.list = false 
     options.url = '' 
     options.title = ''
+    options.search = ''
 
     opt_parser = OptionParser.new do |opts|
       opts.banner = 'Usage: l [options]'
@@ -27,6 +28,10 @@ class Options
       
       opts.on('-t', '--title [STRING]', 'Add a title to the file') do |t|
 	options.title = t 
+      end 
+      
+      opts.on('-s', '--search [STRING]', 'Search for a string') do |s|
+        puts Links.search_file(s)
       end 
     end
 
@@ -52,6 +57,10 @@ class Links
 
   def self.format_for_display(args)
     "#{args['title']} - #{args['url']}"
+  end
+
+  def self.search_file(args)
+    File.open(LINK_FILE) { |f| f.grep(/#{args}/i) }
   end
 end
 
