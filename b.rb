@@ -12,6 +12,7 @@ class Options
     options.url = '' 
     options.title = ''
     options.search = ''
+    options.last = ''
 
     opt_parser = OptionParser.new do |opts|
       opts.banner = 'Usage: l [options]'
@@ -33,6 +34,11 @@ class Options
       opts.on('-s', '--search [STRING]', 'Search for a string') do |s|
         puts Links.search_file(s)
       end 
+
+      opts.on('-n', '--tail [INTEGER]', 'Show the last n bookmarks') do |n|
+        puts Links.tail_file(n)
+      end 
+
     end
 
     opt_parser.parse!(args)
@@ -42,6 +48,10 @@ end
 
 class Links
   LINK_FILE = '/Users/swm/Dropbox/links.txt'
+
+  def self.tail_file(args)
+    `tail -n #{args} #{LINK_FILE}`
+  end
 
   def self.cat_file
     File.open(LINK_FILE).read
