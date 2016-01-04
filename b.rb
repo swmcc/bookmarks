@@ -19,7 +19,7 @@ class Options
       opts.separator 'Specific options:'
 
       opts.on('-l', '--list', 'Show the whole file') do |l|
-        Links.list_file()
+        puts Links.cat_file()
       end
 
       opts.on('-u', '--url [STRING]', 'Add a url to the file') do |u|
@@ -43,12 +43,8 @@ end
 class Links
   LINK_FILE = '/Users/swm/Dropbox/links.txt'
 
-  def self.read_file
+  def self.cat_file
     File.open(LINK_FILE).read
-  end
-
-  def self.list_file
-    puts self.read_file
   end
 
   def self.add_entry(args)
