@@ -2,13 +2,15 @@
 
 require 'optparse'
 require 'ostruct'
+require 'pp'
 
 class Options
 
   def self.parse(args)
     options = OpenStruct.new
     options.list = false 
-    options.add = [] 
+    options.url = '' 
+    options.title = ''
 
     opt_parser = OptionParser.new do |opts|
       opts.banner = 'Usage: l [options]'
@@ -19,9 +21,12 @@ class Options
         Links.list_file()
       end
 
-      opts.on('-a', '--add', 'Add an entry to the file') do |a|
-	options.add << a 
-        Links.add_url(a)
+      opts.on('-u', '--url [STRING]', 'Add a url to the file') do |u|
+	options.url = u 
+      end 
+      
+      opts.on('-t', '--title [STRING]', 'Add a title to the file') do |t|
+	options.title = t 
       end 
     end
 
@@ -41,9 +46,18 @@ class Links
     puts self.read_file
   end
 
-  def self.add_url(args)
-    puts args
+  def self.add_entry(args)
+    File.open(LINK_FILE, 'a+') { |f| f.puts(self.format_for_display(args)) }
+  end
+
+  def self.format_for_display(args)
+    "#{args['title']} - #{args['url']}"
   end
 end
 
-Options.parse(ARGV)
+options = Options.parse(ARGV)
+
+unless options['url'].empty? && options['title'].empty?
+  Links.add_entry(options)
+end
+
