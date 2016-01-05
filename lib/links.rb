@@ -14,10 +14,15 @@ class Links
   end
 
   def self.format_for_display(args)
-    "#{args['title']} - #{args['url']}"
+    "#{args['title']} - #{args['url']} - #{self.timestamp}"
   end
 
   def self.search_file(args)
     File.open(LINK_FILE) { |f| f.grep(/#{args}/i) }
   end
+
+  def self.timestamp
+    Time.now.strftime("%A %Y-%m-%d %H:%M")
+  end
+
 end
