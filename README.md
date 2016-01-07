@@ -42,6 +42,7 @@ More of a place that scratches an itch that I have and allows me to
 git clone git@github.com:swmcc/bookmarks.git 
 cd bookmarks 
 mkdir -p ~/bin # Make sure your $PATH knows about ~/bin
+export LINK_FILE=/Users/xxx/Dropbox/links.txt
 ln -s app.rb ~/bin/b
 ```
 
