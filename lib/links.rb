@@ -1,5 +1,4 @@
 class Links
-  #LINK_FILE = '/Users/swm/Dropbox/links.txt'
   LINK_FILE = ENV['LINK_FILE']
 
   def self.tail_file(args)
