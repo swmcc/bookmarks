@@ -1,15 +1,10 @@
 require 'links.rb'
 
 RSpec.describe "Links" do
-  let(:links) do "codegangsta - https://codegangsta.io/
-msh - http://hertzber.gs/
-hoursintheday - https://medium.com/@itsmeduncan/you-only-have-so-many-hours-in-the-day-a8c004a21d72#.kk2gwrcu0
-" 
-  end
+  let(:file) { 'spec/fixtures/links.txt' }
+  let(:links) { File.open(file).read } 
 
-  before do
-    stub_const("Links::LINK_FILE", 'spec/fixtures/links.txt')
-  end
+  before { stub_const("Links::LINK_FILE", file) }
 
   it 'lists all the urls it should' do
     expect(Links.cat_file).to eq links 
