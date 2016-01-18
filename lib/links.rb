@@ -14,7 +14,7 @@ class Links
   end
 
   def self.format_for_display(args)
-    "#{args['title']} - #{args['url']} - #{self.timestamp}"
+    "#{args['title']} - #{args['url']} - #{args['category']} - #{self.timestamp}"
   end
 
   def self.search_file(args)

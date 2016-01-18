@@ -10,6 +10,7 @@ class Options
     options.title = ''
     options.search = ''
     options.last = ''
+    options.label = ''
 
     opt_parser = OptionParser.new do |opts|
       opts.banner = 'Usage: l [options]'
@@ -26,6 +27,10 @@ class Options
       
       opts.on('-t', '--title [STRING]', 'Add a title to the file') do |t|
 	options.title = t 
+      end 
+      
+      opts.on('-c', '--list [STRING]', 'Add a category to the file') do |t|
+	options.category = t 
       end 
       
       opts.on('-s', '--search [STRING]', 'Search for a string') do |s|

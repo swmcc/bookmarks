@@ -11,11 +11,11 @@ RSpec.describe "Links" do
   end
 
   it 'returns the correct url when searching' do
-    expect(Links.search_file('msh').first.chomp).to eq 'msh - http://hertzber.gs/'
+    expect(Links.search_file('msh').first.chomp).to eq 'msh - http://hertzber.gs/ - Monday 2016-01-04 00:00'
   end
 
   it 'returns the last n entries when tailing' do
-    expect(Links.tail_file(1).chomp).to eq 'hoursintheday - https://medium.com/@itsmeduncan/you-only-have-so-many-hours-in-the-day-a8c004a21d72#.kk2gwrcu0'
+    expect(Links.tail_file(1).chomp).to eq 'hoursintheday - https://medium.com/@itsmeduncan/you-only-have-so-many-hours-in-the-day-a8c004a21d72#.kk2gwrcu0 - Monday 2016-01-04 00:00'
   end
 
   it 'returns the correct timestamp' do 
