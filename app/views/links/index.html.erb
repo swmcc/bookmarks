@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Date Added</th>
       <th>Actions</th>
       <th colspan="3"></th>
     </tr>
@@ -16,7 +15,6 @@
     <% @links.each do |link| %>
       <tr>
         <td><%= link_to link.title, link.url %></td>
-        <td><%= link.created_at.strftime("%A %d %b %Y") %></%>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
       </tr>
     <% end %>
