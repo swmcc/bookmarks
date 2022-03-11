@@ -3,7 +3,7 @@ class LinksController < ApplicationController
 
   # GET /links or /links.json
   def index
-    @links = Link.where('active = ? OR active IS ?', true, 't')
+    @links = Link.where('active = ? OR active IS ?', true, 't').order(:title)
   end
 
   # GET /links/1 or /links/1.json
