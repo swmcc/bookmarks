@@ -14,7 +14,7 @@
   <tbody>
     <% @links.each do |link| %>
       <tr>
-        <td><%= link_to link.title, link.url %></td>
+        <td><%= link_to link.title, link.page %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
       </tr>
     <% end %>
