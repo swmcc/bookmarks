@@ -32,3 +32,7 @@ bundle
 ### Deploy
 
 ```git push heroku main```
+
+### Tests
+
+```rspec```
