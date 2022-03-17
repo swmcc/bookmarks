@@ -19,6 +19,12 @@ class LinksController < ApplicationController
   def edit
   end
 
+  def search
+    @links = Link.search_on_title_and_page(params[:term])
+
+    render json: @links
+  end
+
   # POST /links or /links.json
   def create
     @link = Link.new(link_params)
