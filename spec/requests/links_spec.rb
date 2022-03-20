@@ -35,4 +35,13 @@ RSpec.describe 'Links', type: :request do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe 'POST /links'do
+    let(:params) { { title: 'pizza foobar', page: 'http://asdf' } }
+
+    it 'creates a link' do
+      post '/links', params: params, as: :json
+      expect(response).to have_http_status(:created)
+    end
+  end
 end
