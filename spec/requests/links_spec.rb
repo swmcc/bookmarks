@@ -18,4 +18,21 @@ RSpec.describe 'Links', type: :request do
       expect(response).to have_http_status(:success)
     end
   end
+
+  describe 'GET /search' do
+    before do
+      FactoryBot.create_list(:link, 4)
+      FactoryBot.create(:link, title: 'A stevie')
+      get '/search', :params => { :term => "Stevie", :format => :json }
+    end
+
+    it 'returns all links' do
+      json = JSON.parse(response.body)
+      expect(json.size).to eq(1)
+     end
+
+    it 'returns status code 200' do
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
