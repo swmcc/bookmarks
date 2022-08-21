@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+gem 'administrate'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
