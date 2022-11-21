@@ -5,6 +5,7 @@ ruby '3.0.0'
 
 gem 'administrate'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise', '~> 4.8'
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
 gem 'puma', '~> 4.1'
