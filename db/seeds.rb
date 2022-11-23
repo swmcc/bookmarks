@@ -53,4 +53,5 @@ Link.create("title"=>"Efficient Rails", "page"=>"https://www.efficientrails.com/
 Link.create("title"=>"Flexible Dockerized Phoenix Deployments.md", "page"=>"https://gist.github.com/jswny/83e03537830b0d997924e8f1965d88bc\n", "active"=>true)
 Link.create("title"=>"Slack (Github)", "page"=>"https://slack.github.com/", "active"=>false)
 
-User.create!(password: 'pass5577', password_confirmation: 'pass5577', email: 'user@this.app')
+User.create!(password: 'pass5577', password_confirmation: 'pass5577', email: 'admin@swm.cc', role: :admin)
+User.create!(password: 'pass5577', password_confirmation: 'pass5577', email: 'user@swm.cc', role: :user)
