@@ -1,17 +1,19 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.1.2'
 
 gem 'administrate'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise', '~> 4.8'
 gem 'jbuilder', '~> 2.7'
 gem 'pg'
+gem 'psych', '< 4'
 gem 'puma', '~> 4.1'
 gem 'rack-cors', require: 'rack/cors'
-gem 'rails', '~> 6.0.4', '>= 6.0.4.6'
+gem 'rails', '~> 7.0.4', '>= 7.0.4'
 gem 'sass-rails', '>= 6'
+gem 'sprockets-rails'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
 
