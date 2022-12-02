@@ -3,6 +3,9 @@ CURRENT_BRANCH := `git branch --show-current`
 branch:
 	echo $(CURRENT_BRANCH)
 
+local.console:
+	bundle exec rails console
+
 local.db.console:
 	psql lins_development
 
