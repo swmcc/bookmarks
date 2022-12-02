@@ -33,3 +33,5 @@ group :test do
   gem 'factory_bot_rails'
   gem 'faker'
 end
+
+gem "tailwindcss-rails", "~> 2.0"
